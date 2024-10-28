@@ -2,15 +2,22 @@ source tosh.conf
 source ${mainfolder}/.toInf
 
 arg=$1
-echo "${arg}"
+
+if [ -z "$arg" ]; then
+	printf "NO ARGUMENTS!!!! THIS.DIE \nif you want to get help, do \"to.sh -h\" or \"to.sh --help\" :D"
+	exit
+elif [ $arg == "-h" ] || [ $arg == "--help" ]; then
+	printf "wow useful help message"
+	exit
+fi
 
 newfolder=${mainfolder}_${foldername}
 newmain=${mainfolder}_${arg}
 
-echo "moving ${mainfolder} to ${newfolder}..."
+printf "moving ${mainfolder} to ${newfolder}...\n"
 mv ${mainfolder} ${newfolder}
 
-echo "moving ${newmain} to ${mainfolder}..."
+printf "moving ${newmain} to ${mainfolder}...\n"
 mv ${newmain} ${mainfolder}
 
 echo "all done!"
