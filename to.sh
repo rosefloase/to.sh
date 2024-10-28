@@ -1,6 +1,16 @@
 source tosh.conf
 source ${mainfolder}/.toInf
 
-echo "current ${mainfolder} will be moved to ${mainfolder}_${foldername}"
+arg=$1
+echo "${arg}"
 
-echo "${mainfolder}_${1} will be moved to ${mainfolder}"
+newfolder=${mainfolder}_${foldername}
+newmain=${mainfolder}_${arg}
+
+echo "moving ${mainfolder} to ${newfolder}..."
+mv ${mainfolder} ${newfolder}
+
+echo "moving ${newmain} to ${mainfolder}..."
+mv ${newmain} ${mainfolder}
+
+echo "all done!"
