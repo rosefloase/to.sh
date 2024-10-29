@@ -1,7 +1,4 @@
 source tosh.conf
-source ${mainfolder}/.toInf
-
-
 arg=$1
 
 if [ -z "$arg" ]; then
@@ -9,6 +6,8 @@ if [ -z "$arg" ]; then
 	exit
 elif [ $arg == "-n" ] || [ $arg == "--name" ]; then
 	printf "dummy test for naming argument"
+	cp template.toInf $mainfolder/.toInf
+	vim $mainfolder/.toInf
 	exit
 elif [ $arg == "-h" ] || [ $arg == "--help" ]; then
 	shh="\e[1;30m"
@@ -21,6 +20,8 @@ elif [ $arg == "-h" ] || [ $arg == "--help" ]; then
 	printf "to change your main folder's name, edit tosh.conf and update each folder... MANUALLY :(\n" 
 	exit
 fi
+
+source ${mainfolder}/.toInf
 
 newfolder=${mainfolder}_${foldername}
 newmain=${mainfolder}_${arg}
