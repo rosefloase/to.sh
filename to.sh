@@ -1,6 +1,5 @@
 source tosh.conf
 arg=$1
-editor="vim"
 
 if [ -z "$arg" ]; then
 	printf "NO ARGUMENTS!!!! THIS.DIE \nif you want to get help, do \"to.sh -h\" or \"to.sh --help\" :D \n"
