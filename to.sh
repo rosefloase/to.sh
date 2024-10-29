@@ -15,7 +15,10 @@ elif [ $arg == "-h" ] || [ $arg == "--help" ]; then
 	normal="\e[0m"
 
 	printf "${shh}psttt if you want to use to.sh as a regular command do \"alias to.sh='bash to.sh'\"${normal}\n"
-	printf "to.sh is a program designed to solve a very simple problem: Jade Harley doesn't know how to set up subdomains on apache servers!!! :("	
+	printf "to.sh is a program designed to solve a very simple problem: Jade Harley doesn't know how to set up subdomains on apache servers!!! :(\n"	
+	printf "to give a folder a to.shName, run \"to.sh [--name/-n] [to.shName]\"\n"
+	printf "to switch what folder is on main, run \"to.sh [to.shName]\"\n"
+	printf "to change your main folder's name, edit tosh.conf and update each folder... MANUALLY :(\n" 
 	exit
 fi
 
